@@ -6,6 +6,7 @@ const experience = [
     company: "JPMorgan Chase",
     role: "Software Engineer · Reporting Technology",
     period: "2026 — Present",
+    timeline: "6-MONTH INTERNSHIP → FULL-TIME",
     description:
       "Building AI-powered engineering systems that automate complex workflows, accelerate incident resolution, and modernize enterprise platforms.",
     stack: "JAVA · SPRING BOOT · AI ENGINEERING · BACKEND SYSTEMS",
@@ -37,14 +38,20 @@ const experience = [
     company: "Amazon",
     role: "Software Development Engineer Intern",
     period: "2025",
+    timeline: "6-MONTH INTERNSHIP",
     description:
       "Enabled multi-region expansion and improved the reliability and engineering efficiency of production backend services.",
     stack: "JAVA · AWS · DISTRIBUTED SYSTEMS · INFRASTRUCTURE · TEST AUTOMATION",
     details: [
       {
-        label: "SELECTED ENGINEERING CONTRIBUTIONS",
+        label: "CODE QUALITY",
+        heading: "Maintained code coverage across existing and new code",
+        text: "Maintained coverage across the existing codebase and newly written code. This work was completed without AI assistance.",
+      },
+      {
+        label: "CROSS-TEAM COLLABORATION",
         heading: "Unblocked multi-region expansion",
-        text: "Resolved architectural hierarchy, service-discovery, and cross-service dependency failures that were blocking regional rollouts, enabling production readiness across new AWS regions without regressions.",
+        text: "Partnered across teams to resolve architectural hierarchy, service-discovery, and cross-service dependency failures blocking regional rollouts, enabling production readiness without regressions.",
       },
       {
         label: "TEST AUTOMATION",
@@ -65,9 +72,6 @@ const experience = [
     metrics: [
       { value: "~80%", label: "Less test-development effort", context: "Workflow development and onboarding" },
       { value: "~90%", label: "Less manual setup", context: "Functional-test environments" },
-      { value: "5", label: "Production changes", context: "Independently executed" },
-      { value: "3", label: "Deployment stages", context: "Gamma · Onebox · Production" },
-      { value: "2 regions", label: "Enabled for expansion", context: "Zaragoza · Frankfurt" },
     ],
   },
 ];
@@ -116,6 +120,7 @@ function App() {
             <article className="experience-row" key={item.company}>
               <div className="experience-date">
                 <span>{item.period}</span>
+                <span className="timeline-label">{item.timeline}</span>
                 {item.company === "JPMorgan Chase" && <span className="current-label">CURRENT</span>}
               </div>
               <div className="experience-detail">
@@ -159,8 +164,16 @@ function App() {
         </div>
       </section>
 
+      <section className="education-section" aria-labelledby="education-heading">
+        <p className="eyebrow"><span className="signal-mark">03</span> EDUCATION</p>
+        <div>
+          <h2 id="education-heading">B.Tech · Computer Science &amp; Engineering</h2>
+          <p>GRADUATED 2026</p>
+        </div>
+      </section>
+
       <section className="outside-section" aria-labelledby="outside-heading">
-        <p className="eyebrow"><span className="signal-mark">03</span> OFF THE CLOCK</p>
+        <p className="eyebrow"><span className="signal-mark">04</span> OFF THE CLOCK</p>
         <h2 id="outside-heading">After work, I look for trails, new places, and a reason to fill a notebook.</h2>
       </section>
 

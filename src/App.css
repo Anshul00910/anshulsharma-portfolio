@@ -242,6 +242,12 @@ a:focus-visible {
   font-size: 9px;
 }
 
+.timeline-label {
+  max-width: 160px;
+  color: var(--blue);
+  font: 9px/1.5 var(--mono);
+}
+
 .company-heading h3 {
   margin: 0;
   font-size: 19px;
@@ -299,6 +305,57 @@ a:focus-visible {
   border-left: 1px solid var(--line);
 }
 
+.project-panels {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.project-panel {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 13px 14px 13px 0;
+}
+
+.project-panel + .project-panel {
+  padding-left: 14px;
+  border-left: 1px solid var(--line);
+}
+
+.project-panel h4 {
+  margin: 0 0 8px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.project-panel > p {
+  margin: 0;
+  color: #4f5955;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.project-outcome {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: auto;
+  padding-top: 13px;
+}
+
+.project-outcome strong {
+  color: var(--signal);
+  font: 500 12px/1.4 var(--mono);
+}
+
+.project-outcome span {
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
 .impact-metrics {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
@@ -335,12 +392,6 @@ a:focus-visible {
   color: var(--muted);
   font: 9px var(--mono);
   overflow-wrap: anywhere;
-}
-
-.details-label {
-  margin: 0;
-  color: var(--muted);
-  font: 9px var(--mono);
 }
 
 .experience-more ul {
@@ -395,6 +446,7 @@ a:focus-visible {
   font-size: 9px;
 }
 
+.education-section,
 .outside-section {
   display: grid;
   grid-template-columns: 160px minmax(0, 1fr);
@@ -402,6 +454,22 @@ a:focus-visible {
   align-items: baseline;
   padding: 21px 0 23px;
   border-bottom: 1px solid var(--line);
+}
+
+.education-section .eyebrow {
+  margin: 0;
+}
+
+.education-section h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.education-section div > p {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font: 9px var(--mono);
 }
 
 .outside-section .eyebrow {
@@ -465,9 +533,24 @@ a:focus-visible {
   }
 
   .experience-row,
+  .education-section,
   .outside-section {
     grid-template-columns: 125px minmax(0, 1fr);
     gap: 18px;
+  }
+
+  .project-panels {
+    grid-template-columns: 1fr;
+  }
+
+  .project-panel {
+    padding: 13px 0;
+  }
+
+  .project-panel + .project-panel {
+    padding-left: 0;
+    border-top: 1px solid var(--line);
+    border-left: 0;
   }
 }
 
@@ -529,6 +612,7 @@ a:focus-visible {
   }
 
   .experience-row,
+  .education-section,
   .outside-section {
     grid-template-columns: 1fr;
     gap: 9px;
